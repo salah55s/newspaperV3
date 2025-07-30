@@ -21,7 +21,7 @@ import nltk
 # NLTK data is required for the first run
 # nltk.download('punkt')
 
-url = 'https://www.cnn.com/2023/11/15/politics/us-china-meeting-biden-xi/index.html'
+url = 'https://edition.cnn.com/2025/07/29/middleeast/israeli-settler-odeh-hathalin-west-bank-oscar-intl'
 
 # Create an Article object
 article = Article(url)
