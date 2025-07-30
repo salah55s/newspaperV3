@@ -1,0 +1,73 @@
+[tool.poetry]
+name = "newspaperV3"
+version = "0.3.0"  # Corresponds to your newspaperV3/version.py
+description = "Advanced news extraction, article parsing, and content analysis."
+authors = ["Lucas Ou-Yang", "Salah El. Elnabrawy <salah.nb.03@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/salah55s/newspaperV3"
+repository = "https://github.com/salah55s/newspaperV3"
+keywords = ["newspaper", "news", "article", "extraction", "scraping", "nlp", "content", "parsing"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+# This tells Poetry that your package code is in the "newspaperV3/" directory.
+# Poetry will automatically include all files within it, including the "resources" folder.
+packages = [{ include = "newspaperV3" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = ">=2.25.1"
+lxml = ">=4.6.2"
+Pillow = ">=8.1.2"
+cssselect = ">=1.1.0"
+feedparser = ">=6.0.2"
+tldextract = ">=3.1.0"
+beautifulsoup4 = ">=4.9.3"
+nltk = ">=3.6.2"
+python-dateutil = ">=2.8.1"
+feedfinder2 = ">=0.0.4"
+jieba3k = ">=0.35.1"
+tinysegmenter = ">=0.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0"
+pytest-cov = "^4.0"
+responses = "^0.23.0"
+flake8 = "^7.0"
+black = "^24.3.0"
+isort = "^5.13.2"
+mypy = "^1.9.0"
+types-requests = "^2.31.0"
+pre-commit = "^3.0"
+python-dotenv = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# --- Tool Configurations ---
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
