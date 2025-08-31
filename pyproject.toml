@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "newspaperV3"
-version = "0.3.0"  # Corresponds to your newspaperV3/version.py
+version = "0.3.1"  # Corresponds to your newspaperV3/version.py
 description = "Advanced news extraction, article parsing, and content analysis."
 authors = ["Lucas Ou-Yang", "Salah El. Elnabrawy <salah.nb.03@gmail.com>"]
 license = "MIT"
@@ -37,6 +37,7 @@ tldextract = ">=3.1.0"
 beautifulsoup4 = ">=4.9.3"
 nltk = ">=3.6.2"
 python-dateutil = ">=2.8.1"
+dateparser = ">=1.1.0"
 feedfinder2 = ">=0.0.4"
 jieba3k = ">=0.35.1"
 tinysegmenter = ">=0.3"
@@ -52,6 +53,7 @@ mypy = "^1.9.0"
 types-requests = "^2.31.0"
 pre-commit = "^3.0"
 python-dotenv = "^1.0.0"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

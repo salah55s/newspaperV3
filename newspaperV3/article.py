@@ -226,8 +226,8 @@ class Article(object):
         document_cleaner = DocumentCleaner(self.config)
         output_formatter = OutputFormatter(self.config)
 
-        title = self.extractor.get_title(self.clean_doc)
-        self.set_title(title)
+        # title = self.extractor.get_title(self.clean_doc)
+        # self.set_title(title)
 
         authors = self.extractor.get_authors(self.clean_doc)
         self.set_authors(authors)
@@ -263,14 +263,27 @@ class Article(object):
         meta_data = self.extractor.get_meta_data(self.clean_doc)
         self.set_meta_data(meta_data)
 
-        self.publish_date = self.extractor.get_publishing_date(
-            self.url,
-            self.clean_doc)
 
         # Before any computations on the body, clean DOM object
         self.doc = document_cleaner.clean(self.doc)
 
         self.top_node = self.extractor.calculate_best_node(self.doc)
+
+        title = self.extractor.get_title(
+            original_doc=self.clean_doc, # For candidate gathering
+            cleaned_doc=self.doc,       # For top_node context
+            top_node=self.top_node,     # The anchor for scoring
+            debug=True                  # Set to False in production
+        )
+        self.set_title(title)
+        
+        self.publish_date = self.extractor.get_publishing_date(
+            self.url,
+            self.clean_doc,    # target document
+            self.top_node,     # node from source document
+            self.doc,
+            debug=True)
+        
         if self.top_node is not None:
             video_extractor = VideoExtractor(self.config, self.top_node)
             self.set_movies(video_extractor.get_videos())
