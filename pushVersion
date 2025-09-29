@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "newspaperV3"
+version = "0.3.2"  # <-- CHANGE THIS!
+# ... rest of the file
+
+
+# In newspaperV3/version.py
+version_info = (0, 3, 2) # <-- UPDATE THIS
+__version__ = ".".join(map(str, version_info))
+
+
+git tag v0.3.2
+
+poetry build
+
+poetry publish
+
+
+git push
+git push --tags
+
+
+pip install --upgrade newspaperV3

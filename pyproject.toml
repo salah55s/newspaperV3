@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "newspaperV3"
-version = "0.3.1"  # Corresponds to your newspaperV3/version.py
+version = "0.3.2"  # Corresponds to your newspaperV3/version.py
 description = "Advanced news extraction, article parsing, and content analysis."
 authors = ["Lucas Ou-Yang", "Salah El. Elnabrawy <salah.nb.03@gmail.com>"]
 license = "MIT"

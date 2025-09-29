@@ -273,7 +273,7 @@ class Article(object):
             original_doc=self.clean_doc, # For candidate gathering
             cleaned_doc=self.doc,       # For top_node context
             top_node=self.top_node,     # The anchor for scoring
-            debug=True                  # Set to False in production
+            debug=False                  # Set to False in production
         )
         self.set_title(title)
         
@@ -282,7 +282,7 @@ class Article(object):
             self.clean_doc,    # target document
             self.top_node,     # node from source document
             self.doc,
-            debug=True)
+            debug=False)
         
         if self.top_node is not None:
             video_extractor = VideoExtractor(self.config, self.top_node)
